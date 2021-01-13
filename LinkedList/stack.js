@@ -54,6 +54,7 @@ class Stack{
         return oldHead.value;
     }
 
+    // To see all the elements in the stack
     view(){
         let currentNode = this.head;
         while(currentNode.next){
@@ -62,7 +63,7 @@ class Stack{
         }
     }
 
-    // To see all the elements in the stack
+    // Returns the value at the top of the stack
     peek(){
         if(!this.head) return undefined;
         return this.head.value;
