@@ -21,7 +21,6 @@ class Node{
 class Stack{
     constructor(){
         this.head = null;
-        this.tail = null;
         // The top of the Stack
         this.top = 0;
     }
@@ -31,7 +30,6 @@ class Stack{
         let node = new Node(value);
         if(!this.head) {
             this.head = node;
-            this.tail = node;
         }
         else {
             let oldHead = this.head;
@@ -47,17 +45,15 @@ class Stack{
         let oldHead = this.head;
         let newHead = oldHead.next;
         this.head = newHead;
-        if(this.top === 1) {
-            this.tail = null;
-        }
         this.top--;
         return oldHead.value;
     }
 
     // To see all the elements in the stack
     view(){
+        if(!this.head) return undefined;
         let currentNode = this.head;
-        while(currentNode.next){
+        while(currentNode){
             console.log(currentNode.value);
             currentNode = currentNode.next;
         }
@@ -73,7 +69,10 @@ class Stack{
     length(){
         return this.top;
     }
-
 }
 
+
 let stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
