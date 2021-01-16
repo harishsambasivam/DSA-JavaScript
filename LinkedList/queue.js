@@ -6,7 +6,6 @@
  */
 
 // Functions: enqueue, dequeue, peek, view
-
 // Queue implementation using LinkedList
 class Node {
   constructor(value) {
