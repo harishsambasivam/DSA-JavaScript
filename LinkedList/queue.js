@@ -61,14 +61,4 @@ class Queue {
   }
 }
 
-let queue = new Queue();
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.enqueue(4);
-queue.enqueue(5);
-
-for (let i = 0; i < 5; i++) {
-  console.log(`Served ${queue.dequeue()}`);
-  console.log(queue.view());
-}
+module.exports = {Queue};

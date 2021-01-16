@@ -47,12 +47,13 @@ class Stack {
 
   // To see all the elements in the stack
   view() {
-    if (!this.head) return undefined;
+    let stack = [];
     let currentNode = this.head;
     while (currentNode) {
-      console.log(currentNode.value);
+      stack.push(currentNode.value);
       currentNode = currentNode.next;
     }
+    return stack;
   }
 
   // Returns the value at the top of the stack
@@ -67,7 +68,4 @@ class Stack {
   }
 }
 
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(3);
+module.exports = {Stack};
