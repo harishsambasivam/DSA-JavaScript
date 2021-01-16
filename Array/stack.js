@@ -17,7 +17,7 @@ class Stack {
   // push method to add items to top of stack.
   push(value) {
     this.stack[++this.top] = value;
-    return value;
+    return this.top;
   }
 
   // pop method to remove from top of the stack.
@@ -39,4 +39,4 @@ class Stack {
   }
 }
 
-let stack = new Stack();
+module.exports = {Stack};
