@@ -30,8 +30,7 @@ class Queue {
       oldTail.next = node;
       this.tail = node;
     }
-    this.length++;
-    return this.tail.value;
+    return this.length++;
   }
 
   dequeue() {
