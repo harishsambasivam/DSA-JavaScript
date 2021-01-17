@@ -6,7 +6,6 @@
  */
 
 // Functions: enqueue, dequeue, peek, view
-// Queue implementation using LinkedList
 class Node {
   constructor(value) {
     this.value = value;
@@ -32,7 +31,7 @@ class Queue {
       this.tail = node;
     }
     this.length++;
-    return node;
+    return this.tail.value;
   }
 
   dequeue() {
@@ -47,7 +46,7 @@ class Queue {
   }
 
   peek() {
-    return this.head.value;
+    return this.head?.value;
   }
 
   view() {
