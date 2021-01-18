@@ -1,5 +1,5 @@
 const { expect } = require("@jest/globals");
-const { Queue } = require("./queue");
+const { Queue } = require("./queueUsingLinkedList");
 const queue = new Queue();
 
 describe("Queue using linked list", () => {
