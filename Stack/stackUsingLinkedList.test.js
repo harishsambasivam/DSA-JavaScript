@@ -1,5 +1,5 @@
 const { expect } = require('@jest/globals');
-const {Stack} = require('./stack');
+const {Stack} = require('./stackUsingLinkedList');
 const stack = new Stack();
 
 describe('Stack implementation using linked list', () => {

@@ -1,8 +1,8 @@
 const { expect} = require('@jest/globals');
-const {Stack} = require('./stack');
+const {Stack} = require('./stackUsingArray');
 const stack = new Stack();
 
-describe('Stack implementation using linked list', () => {
+describe('Stack implementation using JavaScript Array', () => {
     it('should push elements to stack!',() => {
         expect(stack.push(1)).toBe(0);
         expect(stack.push(2)).toBe(1);
