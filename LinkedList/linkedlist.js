@@ -118,7 +118,6 @@ class LinkedList {
   }
 
   // to remove an node from the linkedlist
-
   remove(index) {
     if (index < 0 || index >= this.length) return undefined;
     if (index === 0) return this.shift();
@@ -134,7 +133,6 @@ class LinkedList {
   }
 
   // to print the list
-
   print() {
     let list = [];
     let currentNode = this.head;
