@@ -1,3 +1,13 @@
+/* SinglyLinkedList!!
+ * A linked list is implar to an array, it hold values.
+ * However, links in a linked list do not have indexes. With
+ * a linked list you do not need to predetermine it's size as
+ * it grows and shrinks as it is edited. This is an example of
+ * a singly linked list.
+ */
+
+// Functions - push, pop, shift, unshift, get, set, insert, remove, print
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -119,6 +129,7 @@ class LinkedList {
     previousNode.next = nextNode;
     // unlinking from linkedlist chain
     node.next = null;
+    this.length--;
     return node.value;
   }
 
@@ -135,4 +146,4 @@ class LinkedList {
   }
 }
 
-module.exports = {LinkedList};
+module.exports = { LinkedList };
