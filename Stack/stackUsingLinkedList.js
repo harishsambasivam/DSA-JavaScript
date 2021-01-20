@@ -1,4 +1,4 @@
-/* Stack implementation using Array
+/* Stack implementation using LinkedList
 * A stack is exactly what it sounds like. An element gets added to the top of
 * the stack and only the element on the top may be removed. This is an example
 * of an array implementation of a Stack. So an element can only be added/removed
@@ -8,34 +8,63 @@
 
  */
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class Stack {
   constructor() {
-    this.stack = [];
-    this.top = -1;
+    this.head = null;
+    // The top of the Stack
+    this.top = 0;
   }
 
-  // push method to add items to top of stack.
+  // Adds a value onto the beginning of the stack
   push(value) {
-    this.stack[++this.top] = value;
-    return this.top;
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let oldHead = this.head;
+      this.head = node;
+      this.head.next = oldHead;
+    }
+    return this.top++;
   }
 
-  // pop method to remove from top of the stack.
+  // Removes and returns the value at the beginning of the stack
   pop() {
-    if (this.top === -1) return undefined;
-    let topOfStack = this.stack[this.top];
-    this.stack = this.stack.splice(0, this.top--);
-    return topOfStack;
-  }
-
-  // Returns the value at the top of the stack
-  peek() {
-    return this.stack[this.top];
+    if (!this.head) return undefined;
+    let oldHead = this.head;
+    let newHead = oldHead.next;
+    this.head = newHead;
+    this.top--;
+    return oldHead.value;
   }
 
   // To see all the elements in the stack
   view() {
-    return this.stack;
+    let stack = [];
+    let currentNode = this.head;
+    while (currentNode) {
+      stack.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return stack;
+  }
+
+  // Returns the value at the top of the stack
+  peek() {
+    if (!this.head) return undefined;
+    return this.head.value;
+  }
+
+  // Returns the size of the stack
+  length() {
+    return this.top;
   }
 }
 

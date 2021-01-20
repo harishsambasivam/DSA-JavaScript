@@ -1,8 +1,8 @@
-const { expect} = require('@jest/globals');
-const {Stack} = require('./stackUsingArray');
+const { expect } = require('@jest/globals');
+const {Stack} = require('./stackUsingLinkedList');
 const stack = new Stack();
 
-describe('Stack implementation using JavaScript Array', () => {
+describe('Stack implementation using linked list', () => {
     it('should push elements to stack!',() => {
         expect(stack.push(1)).toBe(0);
         expect(stack.push(2)).toBe(1);
@@ -11,7 +11,7 @@ describe('Stack implementation using JavaScript Array', () => {
     })
     
     it('should print the stack!', () => {
-        expect(stack.view().toString()).toBe([4,3,2,1].toString());
+        expect(stack.view().toString()).toBe([1,2,3,4].toString());
         const emptyStack = new Stack();
         expect(emptyStack.view().toString()).toBe([].toString());
     });
@@ -30,15 +30,4 @@ describe('Stack implementation using JavaScript Array', () => {
         expect(stack.push(2)).toBe(1);
         expect(stack.peek()).toBe(2);
     });
-    
-    
-    
-    it('should print the length of the stack!', () => {
-        stack.pop();
-        stack.pop();
-        expect(stack.length()).toBe(0);
-        stack.push(1);
-        stack.push(2);
-        expect(stack.length()).toBe(2);
-    })
 });
