@@ -142,6 +142,18 @@ class LinkedList {
     }
     return list;
   }
+
+  // to reverse the linkedlist
+  reverse() {
+    let oldHead = this.head;
+    this.head = this.tail;
+    this.tail = oldHead;
+    for (let i = this.length; i > 0; i--) {
+      previous = this.get(i - 1);
+      current = this.get(i);
+      current.next = previous;
+    }
+  }
 }
 
 module.exports = { LinkedList };
