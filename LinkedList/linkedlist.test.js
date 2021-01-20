@@ -53,21 +53,26 @@ describe("Linked List", () => {
     expect(linkedlist.print().toString()).toBe([100, 200, 300, 400].toString());
   });
 
-  it('should remove element from the given index',() => {
-        expect(linkedlist.remove(4)).toBeUndefined;
-        expect(linkedlist.remove(-1)).toBeUndefined;
-        expect(linkedlist.remove(3)).toBe(400);
-        expect(linkedlist.remove(0)).toBe(100);
-        expect(linkedlist.remove(1)).toBe(300);
-        expect(linkedlist.print().toString()).toBe([200].toString());
+  it("should remove element from the given index", () => {
+    expect(linkedlist.remove(4)).toBeUndefined;
+    expect(linkedlist.remove(-1)).toBeUndefined;
+    expect(linkedlist.remove(3)).toBe(400);
+    expect(linkedlist.remove(0)).toBe(100);
+    expect(linkedlist.remove(1)).toBe(300);
+    expect(linkedlist.print().toString()).toBe([200].toString());
   });
 
-  it('should print the list', () => {
-        linkedlist.pop();
-        linkedlist.push(1);
-        linkedlist.push(2);
-        linkedlist.push(3);
-        linkedlist.push(4);
-        expect(linkedlist.print().toString()).toBe([1,2,3,4].toString());
-  })
+  it("should print the list", () => {
+    linkedlist.pop();
+    linkedlist.push(1);
+    linkedlist.push(2);
+    linkedlist.push(3);
+    linkedlist.push(4);
+    expect(linkedlist.print().toString()).toBe([1, 2, 3, 4].toString());
+  });
+
+  it("should reverse the array", () => {
+    expect(linkedlist.reverse().toString()).toBe([4, 3, 2, 1].toString());
+    expect(linkedlist.reverse().toString()).toBe([1, 2, 3, 4].toString());
+  });
 });

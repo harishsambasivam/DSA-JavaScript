@@ -145,14 +145,15 @@ class LinkedList {
 
   // to reverse the linkedlist
   reverse() {
+    for (let i = this.length - 1; i >= 0; i--) {
+      let previous = this.get(i - 1);
+      let current = this.get(i);
+      current.next = previous;
+    }
     let oldHead = this.head;
     this.head = this.tail;
     this.tail = oldHead;
-    for (let i = this.length; i > 0; i--) {
-      previous = this.get(i - 1);
-      current = this.get(i);
-      current.next = previous;
-    }
+    return this.print();
   }
 }
 
