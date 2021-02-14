@@ -11,6 +11,9 @@ describe("Quick Sort", () => {
 
   it("Should swap the values in array", () => {
     let arr = [1, 2, 3, 4, 5, 6, 7];
+    swap(0, 1, arr);
+    const foo = () => arr.toString();
+    expect(foo()).toBe([2, 1, 3, 4, 5, 6, 7].toString());
   });
 
   it("Should sort the values in array", () => {
