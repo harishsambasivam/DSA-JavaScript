@@ -1,21 +1,22 @@
-function swap(array, index1, index2) {
+function swap(index1, index2, array) {
   let temp = array[index1];
   array[index1] = array[index2];
   array[index2] = temp;
 }
 
 function pivot(array, startIndex = 0, endIndex = array.length - 1) {
+  console.log(array.slice(startIndex, endIndex));
   if (array.length === 1) return;
   let pivot = array[startIndex];
   let pivotIndex = startIndex;
   for (let i = startIndex + 1; i <= endIndex; i++) {
     if (array[i] < pivot) {
       pivotIndex++;
-      swap(array, i, pivotIndex);
+      swap(i, pivotIndex, array);
     }
   }
 
-  if (startIndex != pivotIndex) swap(array, startIndex, pivotIndex);
+  if (startIndex != pivotIndex) swap(startIndex, pivotIndex, array);
   return pivotIndex;
 }
 

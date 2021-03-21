@@ -23,3 +23,5 @@ function bubbleSort(array) {
   } while (swapped);
   return array;
 }
+
+module.exports = { bubbleSort, swap };
